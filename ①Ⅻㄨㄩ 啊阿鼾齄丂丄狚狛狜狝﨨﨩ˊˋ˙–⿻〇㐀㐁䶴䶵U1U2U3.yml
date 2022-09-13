@@ -4,8 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 # 管道自动触发规则
-trigger:
-- master
+trigger: none
 
 # 指定代理池
 pool: Default
