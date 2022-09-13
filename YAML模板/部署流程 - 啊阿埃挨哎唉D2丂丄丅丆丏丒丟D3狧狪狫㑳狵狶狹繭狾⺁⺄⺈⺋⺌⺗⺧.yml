@@ -67,6 +67,13 @@ steps:
     arguments: '--runtime win-x64'
   continueOnError: true
 
+- task: VSTest@2
+  displayName: ttttttttttttttttttttttttttttt
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    codeCoverageEnabled: true
+
 # 将应用程序及其依赖项发布到文件夹，以便部署到托管系统
 - task: DotNetCoreCLI@2
   displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
