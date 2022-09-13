@@ -93,12 +93,17 @@ steps:
   condition: succeeded()
 
 # 将生成项目部署到Azure云服务Web应用程序 URL: http://cti-gb18030.azurewebsites.net
+# - task: AzureWebApp@1
+#   inputs:
+#     azureSubscription: '选择AzureWeb应用服务'
+#     appType: 'webApp'
+#     appName: 'cti-gb18030'
+#     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+#     deploymentMethod: 'auto'
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: '部署AzureWeb应用服务'
+    azureSubscription: '澶濂濡濮濞濠濯瀚D2氿汃汄汅汈汋汌汍D3龕龖龗龘龜龝龞龡D4☆★○●◎◇◆□■△▲※'
     appType: 'webApp'
     appName: 'cti-gb18030'
     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
-
-
