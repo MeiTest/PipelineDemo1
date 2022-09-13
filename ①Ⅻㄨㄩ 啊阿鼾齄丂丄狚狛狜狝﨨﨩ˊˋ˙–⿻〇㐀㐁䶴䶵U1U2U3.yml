@@ -38,12 +38,21 @@ steps:
     noCache: true
 
 # 使用.NET测试驱动执行单元测试
-- task: DotNetCoreCLI@2
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: test
+#     projects: '**/*Test/*.csproj'
+#     arguments: '--configuration $(buildConfiguration) --filter TestCategory=UnitTest'
+- task: VSTest@2
   inputs:
-    command: test
-    projects: '**/*Test/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --filter TestCategory=UnitTest'
-
+    testSelector: 'testAssemblies'
+    testAssemblyVer2: |
+      **\*test*.dll
+      !**\*TestAdapter.dll
+      !**\obj\**
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
+    testRunTitle: '①Ⅻㄨㄩ 啊阿鼾齄丂丄狚狛狜狝﨨﨩ˊˋ˙–⿻〇㐀㐁䶴䶵U1[]U2[]U3[]'
 # 执行测试计划中的单元测试
 # - task: VSTest@2
 #   inputs:
