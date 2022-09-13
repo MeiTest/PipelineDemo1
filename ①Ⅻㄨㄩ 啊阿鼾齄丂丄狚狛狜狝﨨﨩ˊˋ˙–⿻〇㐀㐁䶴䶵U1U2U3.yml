@@ -87,6 +87,7 @@ steps:
     arguments: '-p:PublishChromeDriver=true --runtime win-x64 --output $(Build.ArtifactStagingDirectory)/TechFabricSln.Test/'
     zipAfterPublish: false
 
+
 # 将生成工件发布到Azure Pipelines
 - task: PublishBuildArtifacts@1
   inputs:
@@ -94,13 +95,6 @@ steps:
   condition: succeeded()
 
 # 将生成项目部署到Azure云服务Web应用程序 URL: http://cti-gb18030.azurewebsites.net
-# - task: AzureWebApp@1
-#   inputs:
-#     azureSubscription: '选择AzureWeb应用服务'
-#     appType: 'webApp'
-#     appName: 'cti-gb18030'
-#     package: '$(Build.ArtifactStagingDirectory)/**/TechFabricSln.zip'
-#     deploymentMethod: 'auto'
 - task: AzureWebApp@1
   inputs:
     azureSubscription: '澶濂濡濮濞濠濯瀚D2氿汃汄汅汈汋汌汍D3龕龖龗龘龜龝龞龡D4☆★○●◎◇◆□■△▲※'
