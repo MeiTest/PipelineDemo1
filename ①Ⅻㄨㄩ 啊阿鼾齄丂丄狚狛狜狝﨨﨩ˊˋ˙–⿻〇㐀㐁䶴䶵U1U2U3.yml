@@ -89,8 +89,7 @@ steps:
 
 # 将生成工件发布到Azure Pipelines
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: 鼬鼯鼹鼷鼽皑D2牘狕狖狘狚丗D3珿㑇㖞㘚㘎䎱䲣䲠䴘狽䴙䶮D4∞ㄆㄍㄠūǘD1〾⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻D5U1U2U3䀅㩶㩷ARST{|}S'
-  name: '鼬鼯鼹鼷鼽皑D2牘狕狖狘狚丗D3珿㑇㖞㘚㘎䎱䲣䲠䴘狽䴙䶮D4∞ㄆㄍㄠūǘD1〾⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻D5U1U2U3䀅㩶㩷ARST{|}S'
+  displayName: '发布工件: 鼬鼯鼹鼷鼽皑D2牘狕狖狘狚丗D3珿㑇㖞㘚㘎䎱䲣䲠䴘狽䴙䶮D4∞ㄆㄍㄠūǘD1〾⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻D5U1U2U3䀅㩶㩷ARST{|}S'
   condition: succeeded()
 
 # 将生成项目部署到Azure云服务Web应用程序 URL: http://cti-gb18030.azurewebsites.net
