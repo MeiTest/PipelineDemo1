@@ -85,11 +85,12 @@ steps:
     publishWebProjects: false
     projects: 'test/TechFabricSln.Test/TechFabricSln.Test.csproj'
     arguments: '-p:PublishChromeDriver=true --runtime win-x64 --output $(Build.ArtifactStagingDirectory)/TechFabricSln.Test/'
-    zipAfterPublish: true
+    zipAfterPublish: false
 
 # 将生成工件发布到Azure Pipelines
 - task: PublishBuildArtifacts@1
-  displayName: '发布工件: 鼬鼯鼹鼷鼽皑D2牘狕狖狘狚丗D3珿㑇㖞㘚㘎䎱䲣䲠䴘狽䴙䶮D4∞ㄆㄍㄠūǘD1〾⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻D5U1U2U3䀅㩶㩷ARST{|}S'
+  inputs:
+    ArtifactName: 繬D4⊥∥∠≠∵∴D1▕▼▽◢◥☉⊕〒D5U1U2U3䶭䶯
   condition: succeeded()
 
 # 将生成项目部署到Azure云服务Web应用程序 URL: http://cti-gb18030.azurewebsites.net
