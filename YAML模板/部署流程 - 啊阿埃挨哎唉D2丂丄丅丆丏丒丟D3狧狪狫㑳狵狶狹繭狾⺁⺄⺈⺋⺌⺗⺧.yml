@@ -60,18 +60,6 @@ steps:
     arguments: '--runtime win-x64'
   continueOnError: true
 
-# 创建包文件
-- task: DotNetCoreCLI@2
-  displayName: '创建包文件'
-  inputs:
-    command: 'pack'
-    projects: '**/TechFabricSln.csproj'
-    arguments: '--no-build --configuration $(buildConfiguration)'
-    versioningScheme: byPrereleaseNumber
-    majorVersion: '1'
-    minorVersion: '0'
-    patchVersion: '0'
-
 # 将应用程序及其依赖项发布到文件夹，以便部署到托管系统
 - task: DotNetCoreCLI@2
   displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
@@ -99,16 +87,6 @@ steps:
     ArtifactName: 繬D4⊥∥∠≠∵∴D1▕▼▽◢◥☉⊕〒D5U1U2U3䶭䶯
   condition: succeeded()
 
-
-
-# 发布到共享包平台
-- task: NuGetCommand@2
-  displayName: '发布到共享包平台'
-  inputs:
-    command: push
-    feedPublish: '$(System.TeamProject)/①Ⅻㄨㄩ啊阿鼾齄丂丄狚狛狜狝﨨﨩ˊˋ˙–⿻〇㐀㐁䶴䶵'
-    allowPackageConflicts: true
-  condition: succeeded()
 
 # 将生成项目部署到Azure云服务Web应用程序 URL: http://cti-gb18030.azurewebsites.net
 - task: AzureWebApp@1
