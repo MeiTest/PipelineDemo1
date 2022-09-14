@@ -21,7 +21,7 @@ namespace TechFabricSln.Test
         {
             var bought = new Bought();
 
-            var result = bought.IsBoughtBy(new User { customer = false });
+            var result = bought.IsBoughtBy(new User { customer = true });
 
             Assert.IsTrue(result);
         }
