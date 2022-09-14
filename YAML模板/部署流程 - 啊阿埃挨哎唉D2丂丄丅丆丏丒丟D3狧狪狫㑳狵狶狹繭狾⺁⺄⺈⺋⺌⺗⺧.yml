@@ -38,15 +38,15 @@ steps:
     noCache: true
 
 # 使用.NET测试驱动或者使用测试计划执行单元测试
-- task: DotNetCoreCLI@2
-  retryCountOnTaskFailure: 1
-  displayName: 单元测试：癌蔼矮艾碍爱隘鼾D2丠両狛丣囆囇囈囉囋D3狜狝狟㥮狢狤狥狦D4ˇ¨〃々—～D1∟∣≒≧⊿═║D5U1U2U3㐈㐉㐊㩴㩵䀄A$&'ABCS
-  inputs:
-    command: test
-    testRunTitle: ①Ⅻㄨㄩ 啊阿鼾齄丂丄狚狛狜狝﨨﨩ˊˋ˙–⿻〇㐀㐁䶴䶵U1[]U2[]U3[]
-    projects: '**/*Test/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --filter TestCategory=UnitTest'
-  continueOnError: true
+# - task: DotNetCoreCLI@2
+#   retryCountOnTaskFailure: 1
+#   displayName: 单元测试：癌蔼矮艾碍爱隘鼾D2丠両狛丣囆囇囈囉囋D3狜狝狟㥮狢狤狥狦D4ˇ¨〃々—～D1∟∣≒≧⊿═║D5U1U2U3㐈㐉㐊㩴㩵䀄A$&'ABCS
+#   inputs:
+#     command: test
+#     testRunTitle: ①Ⅻㄨㄩ 啊阿鼾齄丂丄狚狛狜狝﨨﨩ˊˋ˙–⿻〇㐀㐁䶴䶵U1[]U2[]U3[]
+#     projects: '**/*Test/*.csproj'
+#     arguments: '--configuration $(buildConfiguration) --filter TestCategory=UnitTest'
+#   continueOnError: true
 
 # 生成项目：使用发布配置生成项目及其依赖项
 - script: dotnet build --configuration $(buildConfiguration)
@@ -89,7 +89,7 @@ steps:
 
 # 创建包文件
 - task: DotNetCoreCLI@2
-  displayName: 'Pack the project - $(buildConfiguration)'
+  displayName: '创建包文件'
   inputs:
     command: 'pack'
     projects: '**/*.csproj'
@@ -101,7 +101,7 @@ steps:
 
 # 发布到共享包平台
 - task: NuGetCommand@2
-  displayName: 'Publish NuGet package'
+  displayName: '发布到共享包平台'
   inputs:
     command: push
     feedPublish: '$(System.TeamProject)/①Ⅻㄨㄩ啊阿鼾齄丂丄狚狛狜狝﨨﨩ˊˋ˙–⿻〇㐀㐁䶴䶵'
