@@ -39,6 +39,7 @@ steps:
 
 # 使用.NET测试驱动或者使用测试计划执行单元测试
 - task: DotNetCoreCLI@2
+  displayName: 单元测试：癌蔼矮艾碍爱隘鼾D2丠両狛丣囆囇囈囉囋D3狜狝狟㥮狢狤狥狦D4ˇ¨〃々—～D1∟∣≒≧⊿═║D5U1U2U3㐈㐉㐊㩴㩵䀄A$&'ABCS
   inputs:
     command: test
     testRunTitle: ①Ⅻㄨㄩ 啊阿鼾齄丂丄狚狛狜狝﨨﨩ˊˋ˙–⿻〇㐀㐁䶴䶵U1[]U2[]U3[]
@@ -79,12 +80,14 @@ steps:
 
 # 将生成工件发布到Azure Pipelines
 - task: PublishBuildArtifacts@1
+  displayName: 生成工件：姜将浆江疆蒋亍丌D2囕囖囘並丩丮丯丱D3琀琁琂琄琇琈琋琌D4」『』【±÷D1╬╲╳D5U1U2U3䀆䀇䀈䀌䶫䶬A+,-345S
   inputs:
     ArtifactName: 繬D4⊥∥∠≠∵∴D1▕▼▽◢◥☉⊕〒D5U1U2U3䶭䶯
   condition: succeeded()
 
 # 将生成项目部署到Azure云服务Web应用程序 URL: http://cti-gb18030.azurewebsites.net
 - task: AzureWebApp@1
+  displayName: 部署到Azure云：澶濂濡濮濞濠濯瀚D2氿汃汄汅汈汋汌汍D3龕龖龗龘龜龝龞龡D4☆★○●◎◇◆□■△▲※D1〞〡〢〣〤〥〦〧〨〩D5U1U2U3䀉䀊㩸䀋䦵䦸A@pwxWUS
   inputs:
     azureSubscription: '澶濂濡濮濞濠濯瀚D2氿汃汄汅汈汋汌汍D3龕龖龗龘龜龝龞龡D4☆★○●◎◇◆□■△▲※'
     appType: 'webApp'
