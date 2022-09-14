@@ -87,6 +87,27 @@ steps:
     ArtifactName: 繬D4⊥∥∠≠∵∴D1▕▼▽◢◥☉⊕〒D5U1U2U3䶭䶯
   condition: succeeded()
 
+# 创建包文件
+- task: DotNetCoreCLI@2
+  displayName: 'Pack the project - $(buildConfiguration)'
+  inputs:
+    command: 'pack'
+    projects: '**/*.csproj'
+    arguments: '--no-build --configuration $(buildConfiguration)'
+    versioningScheme: byPrereleaseNumber
+    majorVersion: '1'
+    minorVersion: '0'
+    patchVersion: '0'
+
+# 发布到共享包平台
+- task: NuGetCommand@2
+  displayName: 'Publish NuGet package'
+  inputs:
+    command: push
+    feedPublish: '$(System.TeamProject)/①Ⅻㄨㄩ啊阿鼾齄丂丄狚狛狜狝﨨﨩ˊˋ˙–⿻〇㐀㐁䶴䶵'
+    allowPackageConflicts: true
+  condition: succeeded()
+
 # 将生成项目部署到Azure云服务Web应用程序 URL: http://cti-gb18030.azurewebsites.net
 - task: AzureWebApp@1
   displayName: 部署到Azure云：澶濂濡濮濞濠濯瀚D2氿汃汄汅汈汋汌汍D3龕龖龗龘龜龝龞龡D4☆★○●◎◇◆□■△▲※D1〞〡〢〣〤〥〦〧〨〩D5U1U2U3䀉䀊㩸䀋䦵䦸A@pwxWUS
