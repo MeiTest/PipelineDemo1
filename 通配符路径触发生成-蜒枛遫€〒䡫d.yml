@@ -10,7 +10,7 @@ trigger:
 
     paths:
         include:
-            - "*蜒枛遫€〒??.txt"
+            - "*蜒枛遫€〒*.txt"
             - "*⿷⿸⿹⿺?.txt"
 
 pool: Default
