@@ -20,7 +20,7 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
-    version: '3.0.x'
+    version: '6.0.x'
     includePreviewVersions: true
 
 # 生成项目前需要安装NuGet工具
