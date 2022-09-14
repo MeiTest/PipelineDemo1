@@ -1,4 +1,4 @@
-# 传递属性模板YAML文件
+# 传递属性模板YAML文件（被引用的模板）
 parameters: 
 - name: testSet
   type: jobList
