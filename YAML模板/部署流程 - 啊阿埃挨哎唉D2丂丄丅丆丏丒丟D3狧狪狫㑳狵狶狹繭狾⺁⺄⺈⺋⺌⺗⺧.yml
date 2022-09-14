@@ -20,7 +20,7 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
-    version: '6.0.x'
+    version: '3.0.x'
     includePreviewVersions: true
 
 # 生成项目前需要安装NuGet工具
@@ -37,23 +37,13 @@ steps:
     feedsToUse: 'select'
     noCache: true
 
-# 使用.NET测试驱动执行单元测试
+# 使用.NET测试驱动或者使用测试计划执行单元测试
 - task: DotNetCoreCLI@2
   inputs:
     command: test
     testRunTitle: ①Ⅻㄨㄩ 啊阿鼾齄丂丄狚狛狜狝﨨﨩ˊˋ˙–⿻〇㐀㐁䶴䶵U1[]U2[]U3[]
     projects: '**/*Test/*.csproj'
     arguments: '--configuration $(buildConfiguration) --filter TestCategory=UnitTest'
-
-# 执行测试计划中的单元测试
-# - task: VSTest@2
-#   inputs:
-#     testSelector: 'testPlan'
-#     testPlan: '13'
-#     testSuite: '14'
-#     testConfiguration: '5'
-#     searchFolder: '$(System.DefaultWorkingDirectory)'
-#     runTestsInIsolation: true
 
 # 生成项目：使用发布配置生成项目及其依赖项
 - script: dotnet build --configuration $(buildConfiguration)
@@ -66,13 +56,6 @@ steps:
     projects: '**/*Test/*.csproj'
     arguments: '--runtime win-x64'
   continueOnError: true
-
-- task: VSTest@2
-  displayName: ttttttttttttttttttttttttttttt
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    codeCoverageEnabled: true
 
 # 将应用程序及其依赖项发布到文件夹，以便部署到托管系统
 - task: DotNetCoreCLI@2
